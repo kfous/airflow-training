@@ -9,10 +9,12 @@ from airflow.operators.bash import BashOperator
 def simple_function():
     print("Hello from the task execution")
 
-# Test comment
+# Dag with sequence operators for tasks
 with DAG(
         dag_id="first_dag_with_python_and_bash",
         schedule=None,
+        start_date=datetime(2024, 5, 17),  
+        tags=['fousekis']
 ):
     empty_task = EmptyOperator(task_id="empty_task")
     simple_python_task = PythonOperator(task_id="simple_python_task", python_callable=simple_function)
