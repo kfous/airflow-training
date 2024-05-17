@@ -9,7 +9,7 @@ from airflow.operators.bash import BashOperator
 def simple_function():
     print("Hello from the task execution")
 
-
+# Test comment
 with DAG(
         dag_id="first_dag_with_python_and_bash",
         schedule=None,
