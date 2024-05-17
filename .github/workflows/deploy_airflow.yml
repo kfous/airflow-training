@@ -2,7 +2,7 @@ name: Deploy Airflow DAGs
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   deploy:
@@ -19,4 +19,4 @@ jobs:
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
           cd /home/ubuntu/airflow/dags  
-          git pull origin master 
+          git pull origin main 
